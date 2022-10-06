@@ -31,3 +31,5 @@ int main(){
 //gitpod /workspace/iot.repository (main) $ ./signal
 //ps -fea
 //kill -12 (codigo)
+
+//busqueda de -fea: ps -fea | grep (palabra)
