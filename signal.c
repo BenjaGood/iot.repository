@@ -2,19 +2,29 @@
 #include <signal.h>
 #include <unistd.h>
 
+int cond;
+
+
 void hola(int signalNum){
-    printf("Recibi la senial %d", signalNum);
+    printf("Recibi la senial %d\n", signalNum);
 
 }
 
-int main(){
-    signal(12,hola);
-    while(1){
-        printf("Chanbeando \n");
-        sleep(1);
+void killwith12(int signalNum){
+    printf("Ciclo terminado, señal: %d\n", signalNum);
+    cond = 0;
+}
 
+
+int main(){
+    signal(12,killwith12);
+    signal(2,hola);
+    cond = 1;
+    while(cond == 1){
+        printf("Trabajando\n");
+        sleep(1);
     }
-    printf("Aqui nunca llega");
+    printf("Aqui nunca llega\n");
     return 0;
 }
 
