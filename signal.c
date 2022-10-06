@@ -4,7 +4,6 @@
 
 int cond;
 
-
 void hola(int signalNum){
     printf("Recibi la senial %d\n", signalNum);
 
