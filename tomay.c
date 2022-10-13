@@ -14,3 +14,4 @@ int main(){
 }
 
 //control + d = fin del archivo
+// ./tomay > archivo.txt
