@@ -1,6 +1,9 @@
 #include <pthread.h>
 #include <stdio.h>
 
+#define NUM_THREADS 10
+
+
 typedef struct thread_data{
     int threadId;
     char name[20];
@@ -16,7 +19,8 @@ void * helloWorld(void *arg){
 
 
 int main(){
-    for(int i = 0; i < 100; i++){
+    ThreadData threadData[NUM_THREADS];
+    for(int i = 0; i < NUM_THREADS; i++){
         ThreadData myData;
         pthread_t threadId;
         myData.threadId = i;
